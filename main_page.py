@@ -16,7 +16,7 @@ import time
 
 firebase_creds = st.secrets["firebase"]
 
-# Initialize Firebase Admin SDK
+# Initialize Firebase Admin SDK with the credentials dictionary
 if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_creds)
     firebase_admin.initialize_app(cred)
