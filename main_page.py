@@ -12,9 +12,8 @@ import time
 
 
 
-load_dotenv()
 
-firebase_cert_path = os.getenv('firebase_cert_path')
+firebase_cert_path = ('firebase_cert_path')
 
 if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_cert_path)
