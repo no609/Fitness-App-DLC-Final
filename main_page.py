@@ -14,17 +14,12 @@ import time
 
 
 
+firebase_creds = st.secrets["firebase"]
 
-firebase_cert = st.secrets["firebase"]
-
-# ✅ Initialize Firebase (no need to write to a file anymore)
+# Initialize Firebase Admin SDK
 if not firebase_admin._apps:
-    try:
-        # Initialize Firebase directly with the dictionary from secrets
-        cred = credentials.Certificate(firebase_cert)
-        firebase_admin.initialize_app(cred)
-    except Exception as e:
-        st.error(f"Firebase initialization failed: {e}")
+    cred = credentials.Certificate(firebase_creds)
+    firebase_admin.initialize_app(cred)
 conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
 
