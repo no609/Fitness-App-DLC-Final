@@ -15,10 +15,16 @@ import time
 
 
 
+firebase_cert = st.secrets["firebase"]
+
+# ✅ Initialize Firebase (no need to write to a file anymore)
 if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_cert_path)
-    firebase_admin.initialize_app(cred)
-conn = sqlite3.connect('fitness_app.db')
+    try:
+        # Initialize Firebase directly with the dictionary from secrets
+        cred = credentials.Certificate(firebase_cert)
+        firebase_admin.initialize_app(cred)
+    except Exception as e:
+        st.error(f"Firebase initialization failed: {e}")
 c = conn.cursor()
 
 # Create a table for storing user information if it doesn't exist
