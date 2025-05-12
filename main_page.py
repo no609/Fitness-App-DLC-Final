@@ -14,11 +14,10 @@ import time
 
 
 
-if not firebase_admin._apps:
-    # Ensure the private_key is correctly formatted as a single-line string
-    firebase_creds["private_key"] = firebase_creds["private_key"].replace("\\n", "\n")
+firebase_creds = st.secrets["firebase"]
 
-    # Initialize Firebase Admin SDK with the parsed credentials
+# Initialize Firebase Admin SDK
+if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_creds)
     firebase_admin.initialize_app(cred)
 conn = sqlite3.connect('fitness_app.db')
