@@ -25,6 +25,7 @@ if not firebase_admin._apps:
         firebase_admin.initialize_app(cred)
     except Exception as e:
         st.error(f"Firebase initialization failed: {e}")
+conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
 
 # Create a table for storing user information if it doesn't exist
@@ -37,6 +38,7 @@ c.execute('''
     )
 ''')
 conn.commit()
+
 
 
 os.makedirs('.streamlit', exist_ok=True)
