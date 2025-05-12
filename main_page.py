@@ -14,7 +14,7 @@ import time
 
 
 
-firebase_creds = st.secrets["firebase"]
+firebase_creds = st.secrets["firebase_cert_path"]
 
 # Initialize Firebase Admin SDK
 if not firebase_admin._apps:
