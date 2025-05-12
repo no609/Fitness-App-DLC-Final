@@ -15,7 +15,7 @@ import time
 
 
 
-firebase_cert = st.secrets["firebase_cert_path"]
+firebase_cert = st.secrets["firebase"]
 
 # ✅ Initialize Firebase (no need to write to a file anymore)
 if not firebase_admin._apps:
