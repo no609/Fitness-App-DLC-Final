@@ -1,0 +1,14 @@
+streamlit
+<<<<<<< HEAD
+firebase_admin
+python-dotenv
+toml
+
+=======
+sqlite
+time
+firebase_admin
+time
+os
+dotenv
+>>>>>>> 222a32e (Initial commit)
