@@ -15,8 +15,8 @@ import time
 
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate(st.secrets["firebase"])
-    firebase_admin.initialize_app(cred)
+    cred = credentials.Certificate(dict(st.secrets["firebase"]))
+    initialize_app(cred)
 conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
 
