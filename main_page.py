@@ -13,7 +13,7 @@ import time
 
 
 
-firebase_cert_path = ('firebase_cert_path')
+
 
 if not firebase_admin._apps:
     cred = credentials.Certificate(firebase_cert_path)
