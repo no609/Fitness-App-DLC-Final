@@ -14,11 +14,8 @@ import time
 
 
 
-firebase_creds = st.secrets["firebase_cert_path"]
-
-# Initialize Firebase Admin SDK
 if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_creds)
+    cred = credentials.Certificate(st.secrets["firebase"])
     firebase_admin.initialize_app(cred)
 conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
