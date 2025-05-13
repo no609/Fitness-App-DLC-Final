@@ -45,6 +45,10 @@ textColor = "#ffffff"
 toolbarMode = "minimal"
 ''')
 
+[client]
+toolbarMode = "minimal"
+''')
+
 
 # Countdown function with Start and Stop Timer buttons
 def count_down(seconds, calories_to_add):
