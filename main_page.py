@@ -42,12 +42,9 @@ secondaryBackgroundColor = "#586e75"
 textColor = "#ffffff"
 
 [client]
-toolbarMode = "minimal"
-''')
+toolbarMode = "minimal
 
-[client]
-toolbarMode = "minimal"
-''')
+
 
 
 # Countdown function with Start and Stop Timer buttons
