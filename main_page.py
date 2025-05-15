@@ -135,7 +135,7 @@ def main():
     if 'calories_burned' not in st.session_state:
         st.session_state.calories_burned = 0
 
-    page = st.sidebar.radio("Select Page", ("Home", "Goal", "Workout", "Calories", "BMI", "Recipes"))
+    page = st.sidebar.radio("Select Page", ("Home", "Goal", "Workout", "Calories", "BMI", "Recipes","About"))
 
     # Initialize session state for choice
     if 'choice_made' not in st.session_state:
