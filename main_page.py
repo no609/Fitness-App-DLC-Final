@@ -92,29 +92,49 @@ def login():
     if "Useremail" not in st.session_state:
         st.session_state.Useremail = ""
 
-    choice = st.selectbox('Login / Signup', ['Login', 'Sign Up'])
+    if "signedout" not in st.session_state:
+        st.session_state.signedout = False
+    if "signout" not in st.session_state:
+        st.session_state.signout = False
 
-    if choice == 'Login':
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
-        if st.button("Login"):
-            try:
-                user = auth.get_user_by_email(email)
-                st.success("Login successful!")
-                st.session_state.Username = user.uid
-                st.session_state.Useremail = user.email
-            except Exception as e:
-                st.warning(f"Login failed: {str(e)}")
-    else:
-        email = st.text_input("Email")
-        password = st.text_input("Password", type="password")
-        username = st.text_input("Create a Unique Username")
-        if st.button("Create Account"):
-            try:
-                user = auth.create_user(email=email, password=password, uid=username)
-                st.success("Account created successfully! Please log in.")
-            except Exception as e:
-                st.warning(f"Account creation failed: {str(e)}")
+    def f():
+        try:
+            user = auth.get_user_by_email(Email)
+            st.success("Login Successful")
+            st.session_state.Username = user.uid
+            st.session_state.Useremail = user.email
+            st.session_state.signedout = True
+            st.session_state.signout = True
+            st.session_state.page = "Workout"
+        except:
+            st.warning("Login Failed")
+
+    def t():
+        st.session_state.signedout = False
+        st.session_state.signout = False
+        st.session_state.Username = ""
+
+    choice = st.selectbox('Login/Signup', ['Login', 'Sign Up'])
+
+    if not st.session_state.signedout:
+        if choice == 'Login':
+            Email = st.text_input("Email")
+            Password = st.text_input("Password", type="password")
+            Username = st.text_input("Enter Username")
+            st.button("Login", on_click=f)
+        else:
+            Email = st.text_input("Email")
+            Password = st.text_input("Password", type="password")
+            Username = st.text_input("Make A Unique Username")
+
+            if st.button("Create Account"):
+                user = auth.create_user(email=Email, password=Password, uid=Username)
+                st.success("Account Created Successfully!")
+                st.write("Login Using Email And Password")
+
+    if st.session_state.signout:
+        st.text("Name: " + st.session_state.Username)
+        st.button("Sign Out", on_click=t)
 
 def main():
     if 'calories_burned' not in st.session_state:
