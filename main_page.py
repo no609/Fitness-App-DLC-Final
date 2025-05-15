@@ -10,18 +10,7 @@ from firebase_admin import auth
 import time
 
 
-os.makedirs('.streamlit', exist_ok=True)
 
-with open('.streamlit/config.toml', 'w') as f:
-    f.write('''[theme]
-primaryColor = "#08c2af"
-backgroundColor = "#002b36"
-secondaryBackgroundColor = "#586e75"
-textColor = "#ffffff"
-
-[client]
-toolbarMode = "minimal"
-''')
 
 
 
