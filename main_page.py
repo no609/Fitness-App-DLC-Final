@@ -9,7 +9,6 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
-os.makedirs(".streamlit", exist_ok=True)
 
 os.makedirs('.streamlit/config.toml', exist_ok=True)
 with open('.streamlit/config.toml', 'w') as f:
