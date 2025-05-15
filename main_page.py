@@ -362,9 +362,11 @@ def main():
                     st.markdown("### Salads are beneficial for weight loss primarily because they are low in calories and high in fiber ###")
         else:
             st.warning("Please make a choice on the 'Choice' page first.")
-  elif page == 'About':
-      st.markdown('#### About Fitpal ####')
-      st.write('FitPal is a fitness tracking app developed by a team of four 8th-grade students as part of a school project.Built using Python, FitPal combines technology and wellness to promote healthy habits in a fun and interactive way.The app allows users to log workouts, set personal fitness goals, and stay motivated with daily reminders.Our goal was to create a user-friendly platform that encourages people of all ages to take charge of their health.We focused on simplicity, functionality, and clean design to ensure that anyone—even those new to fitness or technology—can use the app with ease.Through this project, we not only learned about programming but also about the importance of teamwork, problem-solving, and healthy living.')
+   elif page == "About":
+       st.markdown('#### About Fitpal ####')
+       st.write('FitPal is a fitness tracking app developed by a team of four 8th-grade students as part of a school project.Built using Python, FitPal combines technology and wellness to promote healthy habits in a fun and interactive way.The app allows users to log workouts, set personal fitness goals, and stay motivated with daily reminders.Our goal was to create a user-friendly platform that encourages people of all ages to take charge of their health.We focused on simplicity, functionality, and clean design to ensure that anyone—even those new to fitness or technology—can use the app with ease.Through this project, we not only learned about programming but also about the importance of teamwork, problem-solving, and healthy living.')
+
+
 if __name__ == "__main__":
     main()
 
