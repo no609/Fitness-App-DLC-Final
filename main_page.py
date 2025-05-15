@@ -18,14 +18,12 @@ import time
 
 # Initialize Firebase Admin
 if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_cert_path)
+    cred = credentials.Certificate(dict(st.secrets["firebase"]))
     firebase_admin.initialize_app(cred)
-
-# Connect to SQLite DB
 conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
 
-# Create users table if it doesn't exist
+# Create a table for storing user information if it doesn't exist
 c.execute('''
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,6 +33,20 @@ c.execute('''
     )
 ''')
 conn.commit()
+
+
+
+os.makedirs('.streamlit', exist_ok=True)
+with open('.streamlit/config.toml', 'w') as f:
+     f.write('''[theme]
+primaryColor = "#08c2af"
+backgroundColor = "#002b36"
+secondaryBackgroundColor = "#586e75"
+textColor = "#ffffff"
+
+[client]
+toolbarMode = "minimal"
+''')
 
 # Streamlit page config
 st.set_page_config(
