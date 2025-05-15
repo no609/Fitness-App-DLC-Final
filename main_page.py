@@ -11,19 +11,17 @@ import time
 
 os.makedirs(".streamlit", exist_ok=True)
 
-with open(".streamlit/config.toml", "w") as f:
-    f.write("""\
-[theme]
-base = "dark"
+os.makedirs('.streamlit/config.toml', exist_ok=True)
+with open('.streamlit/config.toml', 'w') as f:
+     f.write('''[theme]
 primaryColor = "#08c2af"
 backgroundColor = "#002b36"
 secondaryBackgroundColor = "#586e75"
 textColor = "#ffffff"
-font = "sans serif"
 
-[browser]
+[client]
 toolbarMode = "minimal"
-""")
+''')
 
 
 
