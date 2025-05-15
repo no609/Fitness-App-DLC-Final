@@ -11,7 +11,7 @@ import time
 
 
 os.makedirs('.streamlit/config.toml', exist_ok=True)
-with open('.streamlit/config.toml', 'w') as f:
+with open('.streamlit/', 'w') as f:
      f.write('''[theme]
 primaryColor = "#08c2af"
 backgroundColor = "#002b36"
