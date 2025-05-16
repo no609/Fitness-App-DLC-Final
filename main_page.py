@@ -31,7 +31,52 @@ c.execute('''
 ''')
 conn.commit()
 
+def local_css():
+    st.markdown("""
+    <style>
+        html, body, [data-testid="stAppViewContainer"] {
+            background-color: #002b36;
+            color: #ffffff;
+        }
+        [data-testid="stSidebar"] {
+            background-color: #586e75;
+        }
+        [data-testid="stSidebar"] * {
+            color: #ffffff !important;
+        }
+        .title {
+            font-weight: 900;
+            font-size: 3rem !important;
+            color: #08c2af;
+        }
+        div.stButton > button:first-child {
+            background-color: #08c2af;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px 24px;
+            border: none;
+        }
+        div.stButton > button:first-child:hover {
+            background-color: #ffffff;
+            color: #002b36;
+        }
+        input, textarea {
+            background-color: #586e75 !important;
+            border: 2px solid #08c2af !important;
+            color: #ffffff !important;
+            border-radius: 8px !important;
+        }
+        .stProgress > div > div > div > div {
+            background-color: #08c2af !important;
+        }
+        h1, h2, h3, h4, h5, h6, p, span {
+            color: #ffffff !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
+local_css()
 
 os.makedirs('.streamlit', exist_ok=True)
 with open('.streamlit/config.toml', 'w') as f:
