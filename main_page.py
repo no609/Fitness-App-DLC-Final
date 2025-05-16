@@ -10,6 +10,28 @@ from firebase_admin import auth
 import time
 
 
+
+
+
+
+
+if not firebase_admin._apps:
+    cred = credentials.Certificate(dict(st.secrets["firebase"]))
+    firebase_admin.initialize_app(cred)
+conn = sqlite3.connect('fitness_app.db')
+c = conn.cursor()
+
+# Create a table for storing user information if it doesn't exist
+c.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT NOT NULL,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL
+    )
+''')
+conn.commit()
+
 def local_css():
     st.markdown(
         """
@@ -83,26 +105,6 @@ def local_css():
     )
 
 local_css()
-
-
-
-
-if not firebase_admin._apps:
-    cred = credentials.Certificate(dict(st.secrets["firebase"]))
-    firebase_admin.initialize_app(cred)
-conn = sqlite3.connect('fitness_app.db')
-c = conn.cursor()
-
-# Create a table for storing user information if it doesn't exist
-c.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT NOT NULL,
-        email TEXT NOT NULL,
-        password TEXT NOT NULL
-    )
-''')
-conn.commit()
 
 
 
