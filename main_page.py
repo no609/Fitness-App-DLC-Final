@@ -34,7 +34,66 @@ conn.commit()
 
 
 
+def local_css():
+    st.markdown(
+        """
+        <style>
+        .main {
+            background: linear-gradient(135deg, #0a9396, #94d2bd);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .title {
+            font-weight: 900;
+            font-size: 3rem !important;
+            color: #e9d8a6;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px #00000055;
+        }
+        .css-1d391kg {
+            background-color: #005f73;
+            color: white;
+            font-size: 1.1rem;
+        }
+        div.stButton > button:first-child {
+            background-color: #0a9396;
+            color: white;
+            font-weight: 700;
+            border-radius: 10px;
+            padding: 10px 24px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        div.stButton > button:first-child:hover {
+            background-color: #94d2bd;
+            color: #005f73;
+            cursor: pointer;
+        }
+        .stCheckbox > label {
+            color: white !important;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        div.stTextInput > div > input {
+            border-radius: 8px;
+            padding: 8px;
+            border: 2px solid #0a9396;
+            color: #001219;
+            font-weight: 700;
+        }
+        .css-1kyxreq p, .css-1kyxreq span {
+            color: white;
+        }
+        .stProgress > div > div > div > div {
+            background-color: #94d2bd !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
+# Call the function after Streamlit app setup
+local_css()
 
 
 
