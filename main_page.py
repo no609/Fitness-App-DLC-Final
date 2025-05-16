@@ -33,28 +33,6 @@ c.execute('''
 conn.commit()
 
 
-
-
-
-
-
-def count_down(seconds, calories_to_add):
-    countdown_placeholder = st.empty()
-    for remaining in range(seconds, 0, -1):
-        mins, secs = divmod(remaining, 60)
-        countdown_placeholder.markdown(f"<h1 style='color:#08c2af; font-weight:bold;'>{mins:02d}:{secs:02d}</h1>", unsafe_allow_html=True)
-        time.sleep(1)
-    countdown_placeholder.markdown("<h2 style='color:#94d2bd; font-weight:bold;'>Time&#39;s Up! You Did It! 🎉</h2>", unsafe_allow_html=True)
-    if 'calories_burned' not in st.session_state:
-        st.session_state.calories_burned = 0
-    st.session_state.calories_burned += calories_to_add
-
-def only_cal(calories_to_add):
-    if 'calories_burned' not in st.session_state:
-        st.session_state.calories_burned = 0
-    st.session_state.calories_burned += calories_to_add
-
-
 def local_css():
     st.markdown(
         """
@@ -128,6 +106,28 @@ def local_css():
     )
 
 local_css()
+
+
+
+
+def count_down(seconds, calories_to_add):
+    countdown_placeholder = st.empty()
+    for remaining in range(seconds, 0, -1):
+        mins, secs = divmod(remaining, 60)
+        countdown_placeholder.markdown(f"<h1 style='color:#08c2af; font-weight:bold;'>{mins:02d}:{secs:02d}</h1>", unsafe_allow_html=True)
+        time.sleep(1)
+    countdown_placeholder.markdown("<h2 style='color:#94d2bd; font-weight:bold;'>Time&#39;s Up! You Did It! 🎉</h2>", unsafe_allow_html=True)
+    if 'calories_burned' not in st.session_state:
+        st.session_state.calories_burned = 0
+    st.session_state.calories_burned += calories_to_add
+
+def only_cal(calories_to_add):
+    if 'calories_burned' not in st.session_state:
+        st.session_state.calories_burned = 0
+    st.session_state.calories_burned += calories_to_add
+
+
+
 
 def login():
     st.markdown(
