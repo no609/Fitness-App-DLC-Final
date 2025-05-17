@@ -34,14 +34,16 @@ conn.commit()
 
 
 
+
+
 def local_css():
     st.markdown(
         """
         <style>
         /* Background gradient and main area */
         .css-18e3th9 {
-            background: linear-gradient(135deg, #0a9396, #94d2bd);
-            color: blue;
+            background: linear-gradient(135deg, #002b36, #586e75);
+            color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
@@ -49,29 +51,29 @@ def local_css():
         .title {
             font-weight: 900;
             font-size: 3rem !important;
-            color: #e9d8a6;
+            color: #08c2af;
             letter-spacing: 2px;
             text-shadow: 2px 2px 4px #00000055;
         }
 
         /* Sidebar background and text color */
         [data-testid="stSidebar"] {
-            background-color: #005f73;
-            color: white;
+            background-color: #586e75;
+            color: #ffffff;
             font-size: 1.1rem;
             font-weight: 600;
         }
         
         /* Sidebar links color */
         [data-testid="stSidebar"] div[role="listitem"] > div {
-            color: white !important;
+            color: #ffffff !important;
             font-weight: 600;
         }
 
         /* Buttons styling */
         div.stButton > button:first-child {
-            background-color: #0a9396;
-            color: white;
+            background-color: #08c2af;
+            color: #ffffff;
             font-weight: 700;
             border-radius: 10px;
             padding: 10px 24px;
@@ -79,14 +81,14 @@ def local_css():
             transition: background-color 0.3s ease;
         }
         div.stButton > button:first-child:hover {
-            background-color: #94d2bd;
-            color: #005f73;
+            background-color: #586e75;
+            color: #002b36;
             cursor: pointer;
         }
 
         /* Checkbox label color */
         label[data-baseweb="checkbox"] {
-            color: white !important;
+            color: #ffffff !important;
             font-size: 1rem;
             font-weight: 600;
         }
@@ -95,26 +97,27 @@ def local_css():
         div.stTextInput > div > input {
             border-radius: 8px;
             padding: 8px;
-            border: 2px solid #0a9396;
-            color: #001219;
+            border: 2px solid #08c2af;
+            color: #002b36;
             font-weight: 700;
         }
 
         /* Markdown text color for main content */
         .streamlit-expanderHeader, .markdown-text-container p, .markdown-text-container span {
-            color: white !important;
+            color: #ffffff !important;
         }
 
         /* Progress bar color */
         div.stProgress > div > div > div > div {
-            background-color: #94d2bd !important;
+            background-color: #586e75 !important;
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-# Call local_css to apply styles
+
+
 local_css()
 
 
