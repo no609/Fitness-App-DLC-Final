@@ -36,27 +36,27 @@ conn.commit()
 
 st.markdown("""
     <style>
-        /* Backgrounds */
-        [data-testid="stAppViewContainer"] {
-            background-color: #002b36 !important;
-        }
-        [data-testid="stSidebar"] {
-            background-color: #586e75 !important;
-        }
-        header {
-            background-color: #002b36 !important;
-        }
+    body {
+      background-color: #002b36;
+      color: #ffffff;
+    }
 
-        /* Primary color for buttons and highlights */
-        .stButton>button {
-            background-color: #08c2af !important;
-            color: white !important;
-        }
+    header, .block-container {
+      background-color: #002b36;
+    }
 
-        /* Optional: hide toolbar */
-        [data-testid="stToolbar"] {
-            display: none !important;
-        }
+    .stButton>button, .stTextInput>div>div>input {
+      background-color: #08c2af !important;
+      color: #ffffff !important;
+    }
+
+    .css-1d391kg, .css-1r6slb0 {
+      background-color: #586e75 !important;
+    }
+
+    a {
+      color: #08c2af !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
