@@ -28,7 +28,6 @@ st.markdown("""
 
 
 
-
 if not firebase_admin._apps:
     cred = credentials.Certificate(dict(st.secrets["firebase"]))
     firebase_admin.initialize_app(cred)
