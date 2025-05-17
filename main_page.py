@@ -33,32 +33,19 @@ c.execute('''
 conn.commit()
 
 
-st.markdown(
-        """
+def set_background_color(color):
+    st.markdown(
+        f"""
         <style>
-        /* Background color */
-        .css-18e3th9 {
-            background-color: #002b36;
-            color: #002b36;
-        }
-        /* Customize first button */
-        div.stButton > button:first-child {
-            background-color: #08c2af;
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-            padding: 10px 20px;
-            border: none;
-        }
-        div.stButton > button:first-child:hover {
-            background-color: #586e75;
-            color: #002b36;
-            cursor: pointer;
-        }
+        /* Main app background */
+        .css-18e3th9 {{
+            background-color: {color};
+        }}
         </style>
         """,
         unsafe_allow_html=True,
     )
+set_background_color('#f0f0f0')
 
 
 
