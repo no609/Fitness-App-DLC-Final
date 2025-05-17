@@ -33,8 +33,7 @@ c.execute('''
 conn.commit()
 
 
-
-    st.markdown(
+st.markdown(
         """
         <style>
         /* Background color */
