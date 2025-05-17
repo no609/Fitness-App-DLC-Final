@@ -34,7 +34,32 @@ conn.commit()
 
 
 
-
+    st.markdown(
+        """
+        <style>
+        /* Background color */
+        .css-18e3th9 {
+            background-color: #002b36;
+            color: #ffffff;
+        }
+        /* Customize first button */
+        div.stButton > button:first-child {
+            background-color: #08c2af;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: none;
+        }
+        div.stButton > button:first-child:hover {
+            background-color: #586e75;
+            color: #002b36;
+            cursor: pointer;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 
