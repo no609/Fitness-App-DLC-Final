@@ -35,32 +35,29 @@ conn.commit()
 
 st.markdown("""
     <style>
-        /* Backgrounds */
+        /* Main app background */
         [data-testid="stAppViewContainer"] {
             background-color: #002b36 !important;
         }
+
+        /* Sidebar background */
         [data-testid="stSidebar"] {
-            background-color: #586e75 !important;
-        }
-        header {
             background-color: #002b36 !important;
         }
 
-        /* Primary color for buttons and highlights */
-        .stButton>button {
-            background-color: #08c2af !important;
-            color: white !important;
+        /* Text input fields */
+        input[type="text"], input[type="email"], input[type="password"] {
+            background-color: #586e75 !important;
+            color: #ffffff !important;
+            border: none;
         }
 
-        /* Optional: hide toolbar */
-        [data-testid="stToolbar"] {
-            display: none !important;
+        /* Optional: Text inside inputs */
+        ::placeholder {
+            color: #d3d3d3 !important;
         }
     </style>
 """, unsafe_allow_html=True)
-
-
-
 
 
 def count_down(seconds, calories_to_add):
