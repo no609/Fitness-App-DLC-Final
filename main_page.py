@@ -34,16 +34,43 @@ conn.commit()
 
 st.markdown("""
     <style>
-        body, .stApp {
-            background-color: #002b36;
-            color: #ffffff;
+        html, body, [data-testid="stAppViewContainer"], .stApp {
+            background-color: #002b36 !important;
+            color: #ffffff !important;
         }
+
+        [data-testid="stSidebar"] {
+            background-color: #002b36 !important;
+        }
+
+        [data-testid="stHeader"] {
+            background-color: #002b36 !important;
+        }
+
+        [data-testid="stToolbar"] {
+            visibility: hidden;
+        }
+
         .stButton>button {
-            background-color: #08c2af;
-            color: white;
+            background-color: #08c2af !important;
+            color: #ffffff !important;
         }
-        .css-1d391kg, .css-18ni7ap {
+
+        .css-1v0mbdj, .css-1dp5vir, .block-container {
             background-color: #586e75 !important;
+        }
+
+        .stSelectbox div, .stTextInput input, .stSlider, .stSlider>div {
+            background-color: #586e75 !important;
+            color: #ffffff !important;
+        }
+
+        .css-1y4p8pa {
+            color: #ffffff !important;
+        }
+
+        a {
+            color: #08c2af !important;
         }
     </style>
 """, unsafe_allow_html=True)
