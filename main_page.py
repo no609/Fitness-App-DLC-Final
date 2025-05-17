@@ -10,7 +10,7 @@ from firebase_admin import auth
 import time
 
 
-
+def custom():
 st.markdown("""
     <style>
     :root {
@@ -68,7 +68,7 @@ conn.commit()
 
 
 
-
+custom()
 
 
 
