@@ -11,7 +11,30 @@ import time
 
 
 
+st.markdown("""
+    <style>
+    :root {
+        --primary-color: #08c2af;
+        --background-color: #002b36;
+        --secondary-background-color: #586e75;
+        --text-color: #ffffff;
+    }
 
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .stButton>button, .stDownloadButton>button {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .css-1d391kg {
+        background-color: var(--secondary-background-color);
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 
 
@@ -55,79 +78,7 @@ def only_cal(calories_to_add):
     st.session_state.calories_burned += calories_to_add
 
 
-def local_css():
-    st.markdown(
-        """
-        <style>
-        /* Background gradient */
-        .main {
-            background: linear-gradient(135deg, #0a9396, #94d2bd);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        /* Header styling */
-        .title {
-            font-weight: 900;
-            font-size: 3rem !important;
-            color: #e9d8a6;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px #00000055;
-        }
 
-        /* Sidebar styling */
-        .css-1d391kg {
-            background-color: #005f73;
-            color: white;
-            font-size: 1.1rem;
-        }
-
-        /* Button styling */
-        div.stButton > button:first-child {
-            background-color: #0a9396;
-            color: white;
-            font-weight: 700;
-            border-radius: 10px;
-            padding: 10px 24px;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-        div.stButton > button:first-child:hover {
-            background-color: #94d2bd;
-            color: #005f73;
-            cursor: pointer;
-        }
-
-        /* Checkbox label color */
-        .stCheckbox > label {
-            color: white !important;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        /* Text input style */
-        div.stTextInput > div > input {
-            border-radius: 8px;
-            padding: 8px;
-            border: 2px solid #0a9396;
-            color: #001219;
-            font-weight: 700;
-        }
-
-        /* Markdown text color */
-        .css-1kyxreq p, .css-1kyxreq span {
-            color: white;
-        }
-        /* Progress bar color */
-        .stProgress > div > div > div > div {
-            background-color: #94d2bd !important;
-        }
-
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-local_css()
 
 def login():
     st.markdown(
