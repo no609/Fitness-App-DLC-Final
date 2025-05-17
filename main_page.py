@@ -11,40 +11,69 @@ import time
 
 
 
-st.markdown(
-    """
-    <style>
-    /* Set main background color */
-    .reportview-container {
-        background-color: #002b36 !important;
-    }
-    /* Set sidebar background color */
-    .sidebar .sidebar-content {
-        background-color: #586e75 !important;
-    }
-    /* Set primary button colors */
-    div.stButton > button {
-        background-color: #08c2af !important;
-        color: #ffffff !important;
-    }
-    /* Set text input background and text color */
-    .stTextInput > div > input {
-        background-color: #586e75 !important;
-        color: #ffffff !important;
-    }
-    /* Set text area background and text color */
-    .stTextArea > div > textarea {
-        background-color: #586e75 !important;
-        color: #ffffff !important;
-    }
-    /* Set markdown text color */
-    .stMarkdown, .stText {
-        color: #ffffff !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+
+
+# Set page config early for toolbar mode and basic page info
+st.set_page_config(
+    page_title="Full Themed Streamlit App",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    toolbar_mode="minimal"
 )
+
+# Full theme CSS applying all requested colors with updated selectors and efficient targeting
+css = """
+<style>
+/* Main app background */
+[data-testid="stAppViewContainer"] {
+    background-color: #002b36;
+}
+
+/* Sidebar background */
+[data-testid="stSidebar"] > div:first-child {
+    background-color: #586e75;
+}
+
+/* Primary buttons styling */
+div.stButton > button {
+    background-color: #08c2af;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+div.stButton > button:hover {
+    background-color: #06a799;
+}
+
+/* Text inputs and textareas */
+input[type="text"], textarea {
+    background-color: #586e75;
+    color: #ffffff;
+    border: 1px solid #08c2af;
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+
+/* Markdown and text colors */
+[data-testid="stMarkdownContainer"], .streamlit-expanderHeader, .css-ffhzg2 p, .css-0 span, .css-178ag6o {
+    color: #ffffff;
+}
+
+/* File uploader background */
+.stFileUploader > div {
+    background-color: #586e75;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+/* Ensure any labels and text inputs inside forms also get text color */
+label, span, .css-1v0mbdj {
+    color: #ffffff;
+}
+</style>
+"""
+
+st.markdown(css, unsafe_allow_html=True)
 
 
 
