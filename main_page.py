@@ -61,7 +61,7 @@ def local_css():
 
         /* Button styling */
         div.stButton > button:first-child {
-            background-color: #0a9396;
+            background-color: #002b36;
             color: white;
             font-weight: 700;
             border-radius: 10px;
