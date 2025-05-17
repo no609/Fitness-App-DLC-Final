@@ -43,7 +43,7 @@ def local_css():
         /* Background gradient and main area */
         .css-18e3th9 {
             background: linear-gradient(135deg, #002b36, #586e75);
-            color: #ffffff;
+            color: #002b36;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
