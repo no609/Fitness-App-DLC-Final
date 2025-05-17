@@ -122,7 +122,7 @@ def only_cal(calories_to_add):
         st.session_state.calories_burned = 0
     st.session_state.calories_burned += calories_to_add
 
-
+local_css()
 
 
 def login():
