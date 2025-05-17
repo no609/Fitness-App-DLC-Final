@@ -46,7 +46,7 @@ def local_css():
     </style>
     """,
     unsafe_allow_html=True
-        }
+    )
         /* Header styling */
         .title {
             font-weight: 900;
