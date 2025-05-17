@@ -9,34 +9,9 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
+os.makedirs(".streamlit", exist_ok=True)
 
-def custom():
-st.markdown("""
-    <style>
-    :root {
-        --primary-color: #08c2af;
-        --background-color: #002b36;
-        --secondary-background-color: #586e75;
-        --text-color: #ffffff;
-    }
-
-    body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-    }
-
-    .stButton>button, .stDownloadButton>button {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    .css-1d391kg {
-        background-color: var(--secondary-background-color);
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-os.makedirs('.streamlit', exist_ok=True)
+os.makedirs('.streamlit/config.toml', exist_ok=True)
 with open('.streamlit/config.toml', 'w') as f:
      f.write('''[theme]
 primaryColor = "#08c2af"
@@ -47,6 +22,8 @@ textColor = "#ffffff"
 [client]
 toolbarMode = "minimal"
 ''')
+
+
 
 
 if not firebase_admin._apps:
@@ -68,7 +45,7 @@ conn.commit()
 
 
 
-custom()
+
 
 
 
@@ -87,9 +64,6 @@ def only_cal(calories_to_add):
     if 'calories_burned' not in st.session_state:
         st.session_state.calories_burned = 0
     st.session_state.calories_burned += calories_to_add
-
-
-
 
 def login():
     st.markdown(
