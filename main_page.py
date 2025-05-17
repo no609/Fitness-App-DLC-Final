@@ -13,19 +13,20 @@ import time
 
 st.markdown("""
     <style>
-    html, body, .stApp {
+    .stApp {
         background-color: #002b36;
-        color: #ffffff;
-        margin-top: 7rem !important;  /* Push content down */
-        padding-top: 1rem !important;
     }
 
     .block-container {
-        padding-top: 5rem !important;
+        padding-top: 8rem !important;  /* Pushes main content down */
     }
 
     section[data-testid="stSidebar"] {
         background-color: #586e75;
+    }
+
+    .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
+        color: #ffffff;
     }
 
     input, textarea, select {
