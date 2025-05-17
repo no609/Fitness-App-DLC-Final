@@ -9,6 +9,8 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
+
+
 st.markdown("""
     <style>
     /* Match top elements to background */
@@ -60,6 +62,7 @@ if not firebase_admin._apps:
 conn = sqlite3.connect('fitness_app.db')
 c = conn.cursor()
 
+# Create a table for storing user information if it doesn't exist
 c.execute('''
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -69,6 +72,9 @@ c.execute('''
     )
 ''')
 conn.commit()
+
+
+
 
 os.makedirs('.streamlit', exist_ok=True)
 with open('.streamlit/config.toml', 'w') as f:
@@ -82,6 +88,8 @@ textColor = "#ffffff"
 toolbarMode = "minimal"
 ''')
 
+
+# Countdown function with Start and Stop Timer buttons
 def count_down(seconds, calories_to_add):
     countdown_placeholder = st.empty()
     for remaining in range(seconds, 0, -1):
@@ -98,7 +106,10 @@ def only_cal(calories_to_add):
         st.session_state.calories_burned = 0
     st.session_state.calories_burned += calories_to_add
 
-def login(message_placeholder):
+
+
+
+def login():
     st.markdown(
         """
         <style>
@@ -135,14 +146,14 @@ def login(message_placeholder):
     def f():
         try:
             user = auth.get_user_by_email(Email)
-            message_placeholder.success("Login Successful")
+            st.success("Login Successful")
             st.session_state.Username = user.uid
             st.session_state.Useremail = user.email
             st.session_state.signedout = True
             st.session_state.signout = True
             st.session_state.page = "Workout"
         except:
-            message_placeholder.warning("Login Failed")
+            st.warning("Login Failed")
 
     def t():
         st.session_state.signedout = False
@@ -164,7 +175,7 @@ def login(message_placeholder):
 
             if st.button("Create Account"):
                 user = auth.create_user(email=Email, password=Password, uid=Username)
-                message_placeholder.success("Account Created Successfully!")
+                st.success("Account Created Successfully!")
                 st.write("Login Using Email And Password")
 
     if st.session_state.signout:
@@ -175,23 +186,20 @@ def main():
     if 'calories_burned' not in st.session_state:
         st.session_state.calories_burned = 0
 
-    # Create message placeholder at bottom
-    message_placeholder = st.empty()
-
     page = st.sidebar.radio("Navigate", ("Home", "Goal", "Workout", "Calories", "BMI", "Recipes", "About"))
 
     if page == "Home":
-        login(message_placeholder)
+        login()
 
     elif page == "Goal":
         st.markdown("<h2 style='color:#08c2af; font-weight:bold;'>🎯 Choose Your Goal</h2>", unsafe_allow_html=True)
         goal = st.selectbox("Select your fitness goal:", ["Gain Weight", "Lose Weight"])
         st.session_state.goal = goal.lower()
-        message_placeholder.success(f"You have chosen to {goal.lower()}!")
+        st.success(f"You have chosen to {goal.lower()}!")
 
     elif page == "Workout":
         if 'goal' not in st.session_state:
-            message_placeholder.warning("Please select a goal on the 'Goal' page first.")
+            st.warning("Please select a goal on the 'Goal' page first.")
             return
         st.markdown("<h2 style='color:#08c2af; font-weight:bold;'>💪 Your Customized Personalized Plan</h2>", unsafe_allow_html=True)
 
@@ -265,7 +273,7 @@ def main():
         progress = min(st.session_state.calories_burned / goal, 1.0)
         st.progress(progress)
         if st.session_state.calories_burned >= goal:
-            message_placeholder.success("Congratulations! You have reached your daily calorie goal! 🎉")
+            st.success("Congratulations! You have reached your daily calorie goal! 🎉")
 
     elif page == "BMI":
         st.markdown("<h2 style='color:#08c2af;'>📏 BMI Calculator</h2>", unsafe_allow_html=True)
@@ -288,7 +296,7 @@ def main():
         st.markdown("<h2 style='color:#08c2af;'>🍽️ Healthy Recipes</h2>", unsafe_allow_html=True)
         col1, col2 = st.columns(2, gap="small")
         if 'goal' not in st.session_state:
-            message_placeholder.warning("Please select a goal on the 'Goal' page first.")
+            st.warning("Please select a goal on the 'Goal' page first.")
             return
 
         if st.session_state.goal == "gain weight":
