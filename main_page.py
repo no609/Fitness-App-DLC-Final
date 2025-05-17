@@ -36,26 +36,47 @@ conn.commit()
 
 st.markdown("""
     <style>
-    body {
-      background-color: #002b36;
-      color: #ffffff;
+    /* Backgrounds */
+    body, .stApp {
+        background-color: #002b36;
+        color: #ffffff;
     }
 
-    header, .block-container {
-      background-color: #002b36;
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background-color: #586e75;
     }
 
-    .stButton>button, .stTextInput>div>div>input {
-      background-color: #08c2af !important;
-      color: #ffffff !important;
+    /* Widgets (input boxes, dropdowns, etc.) */
+    .stTextInput>div>div>input,
+    .stSelectbox>div>div>div>div,
+    .stPasswordInput>div>div>input,
+    .stTextArea>div>textarea {
+        background-color: #586e75;
+        color: #ffffff;
+        border: none;
     }
 
-    .css-1d391kg, .css-1r6slb0 {
-      background-color: #586e75 !important;
+    /* Button styling */
+    .stButton>button {
+        background-color: transparent;
+        color: #08c2af;
+        border: 1px solid #08c2af;
     }
 
-    a {
-      color: #08c2af !important;
+    .stButton>button:hover {
+        background-color: #08c2af;
+        color: #002b36;
+    }
+
+    /* Radio buttons */
+    .stRadio > div {
+        color: #ffffff;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff;
     }
     </style>
 """, unsafe_allow_html=True)
