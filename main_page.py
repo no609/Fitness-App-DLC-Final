@@ -11,6 +11,9 @@ import time
 
 import streamlit as st
 
+
+
+def remontada():
 st.markdown(
     """
     <style>
@@ -61,7 +64,7 @@ c.execute('''
 ''')
 conn.commit()
 
-
+remontada()
 
 
 os.makedirs('.streamlit', exist_ok=True)
