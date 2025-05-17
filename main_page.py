@@ -35,16 +35,26 @@ conn.commit()
 
 st.markdown("""
     <style>
+        /* Backgrounds */
         [data-testid="stAppViewContainer"] {
             background-color: #002b36 !important;
         }
-
         [data-testid="stSidebar"] {
+            background-color: #586e75 !important;
+        }
+        header {
             background-color: #002b36 !important;
         }
 
-        header {
-            background-color: #002b36 !important;
+        /* Primary color for buttons and highlights */
+        .stButton>button {
+            background-color: #08c2af !important;
+            color: white !important;
+        }
+
+        /* Optional: hide toolbar */
+        [data-testid="stToolbar"] {
+            display: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
