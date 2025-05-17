@@ -39,7 +39,7 @@ st.markdown(
         /* Background color */
         .css-18e3th9 {
             background-color: #002b36;
-            color: #ffffff;
+            color: #002b36;
         }
         /* Customize first button */
         div.stButton > button:first-child {
