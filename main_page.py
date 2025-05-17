@@ -60,7 +60,7 @@ c.execute('''
 ''')
 conn.commit()
 
-remontada()
+
 
 
 os.makedirs('.streamlit', exist_ok=True)
