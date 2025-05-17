@@ -29,59 +29,25 @@ c.execute('''
         password TEXT NOT NULL
     )
 ''')
+conn.commit()
 
 
 
 
+os.makedirs('.streamlit', exist_ok=True)
+with open('.streamlit/config.toml', 'w') as f:
+     f.write('''[theme]
+primaryColor = "#08c2af"
+backgroundColor = "#002b36"
+secondaryBackgroundColor = "#586e75"
+textColor = "#ffffff"
 
-st.markdown("
-    <style>
-    /* Backgrounds */
-    body, .stApp {
-        background-color: #002b36;
-        color: #ffffff;
-    }
-
-    /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background-color: #586e75;
-    }
-
-    /* Widgets (input boxes, dropdowns, etc.) */
-    .stTextInput>div>div>input,
-    .stSelectbox>div>div>div>div,
-    .stPasswordInput>div>div>input,
-    .stTextArea>div>textarea {
-        background-color: #586e75;
-        color: #ffffff;
-        border: none;
-    }
-
-    /* Button styling */
-    .stButton>button {
-        background-color: transparent;
-        color: #08c2af;
-        border: 1px solid #08c2af;
-    }
-
-    .stButton>button:hover {
-        background-color: #08c2af;
-        color: #002b36;
-    }
-
-    /* Radio buttons */
-    .stRadio > div {
-        color: #ffffff;
-    }
-
-    /* Headings */
-    h1, h2, h3, h4, h5, h6 {
-        color: #ffffff;
-    }
-    </style>
-""", unsafe_allow_html=True)
+[client]
+toolbarMode = "minimal"
+''')
 
 
+# Countdown function with Start and Stop Timer buttons
 def count_down(seconds, calories_to_add):
     countdown_placeholder = st.empty()
     for remaining in range(seconds, 0, -1):
@@ -323,4 +289,3 @@ def main():
 if __name__ == "__main__":
     main()
     conn.close()
-
