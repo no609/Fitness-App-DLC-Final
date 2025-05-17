@@ -9,12 +9,8 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
-import streamlit as st
 
-
-
-def remontada():
-   st.markdown(
+st.markdown(
     """
     <style>
     .reportview-container {
