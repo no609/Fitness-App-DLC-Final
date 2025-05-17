@@ -9,55 +9,41 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
+import streamlit as st
 
-
-st.markdown("""
+st.markdown(
+    """
     <style>
-    /* Match top elements to background */
-    .stApp {
+    .reportview-container {
         background-color: #002b36;
     }
-
-    header[data-testid="stHeader"] {
-        background-color: #002b36;
-        border-bottom: 1px solid #08c2af;
-        color: #ffffff;
-    }
-
-    section[data-testid="stSidebar"] {
+    .sidebar .sidebar-content {
         background-color: #586e75;
     }
-
-    .block-container {
-        padding-top:3rem ;
-    }
-
-    .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
+    .stButton>button {
+        background-color: #08c2af;
         color: #ffffff;
     }
-
-    input, textarea, select {
-        background-color: #586e75 !important;
-        color: #ffffff !important;
-        border: none !important;
+    .stTextInput>div>input {
+        background-color: #586e75;
+        color: #ffffff;
     }
-
-    .stButton > button {
-        background-color: transparent;
-        border: 1px solid #08c2af;
-        color: #08c2af;
+    .stTextArea>div>textarea {
+        background-color: #586e75;
+        color: #ffffff;
     }
-
-    .stButton > button:hover {
-        background-color: #08c2af;
-        color: #002b36;
-    }
-
-    label, .stRadio {
+    .stMarkdown {
         color: #ffffff;
     }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+
+
 if not firebase_admin._apps:
     cred = credentials.Certificate(dict(st.secrets["firebase"]))
     firebase_admin.initialize_app(cred)
