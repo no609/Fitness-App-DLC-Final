@@ -37,11 +37,16 @@ def local_css():
     st.markdown(
         """
         <style>
-        /* Background gradient */
+        /* Background color */
         .main {
-            background: linear-gradient(135deg, #08c2af, #586e75);
-            color: #08c2af;
+            background: #002b36;
+            color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* rest of your CSS here... */
+        </style>
+        """,
+        unsafe_allow_html=True,
         }
 
         /* Header styling */
