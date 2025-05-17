@@ -38,8 +38,8 @@ def local_css():
         """
         <style>
         /* Background color */
-        .main {
-            background: #002b36;
+        body {
+            background-color: #002b36 !important;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -105,6 +105,7 @@ def local_css():
         """,
         unsafe_allow_html=True,
     )
+
 
 def login():
     st.markdown(
