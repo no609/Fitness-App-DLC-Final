@@ -13,16 +13,21 @@ import time
 
 st.markdown("""
     <style>
+    /* Match top elements to background */
     .stApp {
         background-color: #002b36;
     }
 
-    .block-container {
-        padding-top: 8rem !important;  /* Pushes main content down */
+    header[data-testid="stHeader"] {
+        background-color: #002b36;
     }
 
     section[data-testid="stSidebar"] {
         background-color: #586e75;
+    }
+
+    .block-container {
+        padding-top: 2rem;
     }
 
     .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
@@ -33,10 +38,6 @@ st.markdown("""
         background-color: #586e75 !important;
         color: #ffffff !important;
         border: none !important;
-    }
-
-    .css-1wa3eu0 {
-        color: #ffffff !important;
     }
 
     .stButton > button {
