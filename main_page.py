@@ -43,7 +43,7 @@ st.markdown("""
             background-color: #586e75 !important;
         }
         header {
-            background-color: # !important;
+            background-color: #002b36 !important;
         }
 
         /* Primary color for buttons and highlights */
