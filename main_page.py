@@ -20,6 +20,8 @@ st.markdown("""
 
     header[data-testid="stHeader"] {
         background-color: #002b36;
+        border-bottom: 1px solid #08c2af;
+        color: #ffffff;
     }
 
     section[data-testid="stSidebar"] {
