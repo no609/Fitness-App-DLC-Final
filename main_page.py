@@ -13,17 +13,19 @@ import time
 
 st.markdown("""
     <style>
-    .stApp {
+    html, body, .stApp {
         background-color: #002b36;
-        padding-top: 5.5rem;  /* Add top padding */
+        color: #ffffff;
+        margin-top: 7rem !important;  /* Push content down */
+        padding-top: 1rem !important;
+    }
+
+    .block-container {
+        padding-top: 5rem !important;
     }
 
     section[data-testid="stSidebar"] {
         background-color: #586e75;
-    }
-
-    .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
-        color: #ffffff;
     }
 
     input, textarea, select {
@@ -50,13 +52,8 @@ st.markdown("""
     label, .stRadio {
         color: #ffffff;
     }
-
-    .block-container {
-        padding-top: 2rem;
-    }
     </style>
 """, unsafe_allow_html=True)
-
 if not firebase_admin._apps:
     cred = credentials.Certificate(dict(st.secrets["firebase"]))
     firebase_admin.initialize_app(cred)
