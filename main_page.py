@@ -13,13 +13,8 @@ import time
 
 
 
-# Set page config early for toolbar mode and basic page info
-st.set_page_config(
-    page_title="Full Themed Streamlit App",
-    layout="centered",
-    initial_sidebar_state="expanded",
-    toolbar_mode="minimal"
-)
+
+
 
 # Full theme CSS applying all requested colors with updated selectors and efficient targeting
 css = """
