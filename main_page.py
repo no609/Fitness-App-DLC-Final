@@ -13,34 +13,29 @@ import time
 
 st.markdown("""
     <style>
-    /* App background */
     .stApp {
         background-color: #002b36;
+        padding-top: 3rem;  /* Add top padding */
     }
 
-    /* Sidebar background */
     section[data-testid="stSidebar"] {
         background-color: #586e75;
     }
 
-    /* Text color */
     .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
         color: #ffffff;
     }
 
-    /* Input fields */
     input, textarea, select {
         background-color: #586e75 !important;
         color: #ffffff !important;
         border: none !important;
     }
 
-    /* Dropdown caret color */
     .css-1wa3eu0 {
         color: #ffffff !important;
     }
 
-    /* Button styling */
     .stButton > button {
         background-color: transparent;
         border: 1px solid #08c2af;
@@ -52,12 +47,10 @@ st.markdown("""
         color: #002b36;
     }
 
-    /* Radio and labels */
     label, .stRadio {
         color: #ffffff;
     }
 
-    /* Remove extra padding (optional) */
     .block-container {
         padding-top: 2rem;
     }
