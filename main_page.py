@@ -10,34 +10,43 @@ from firebase_admin import auth
 import time
 
 
+
 st.markdown(
     """
     <style>
+    /* Set main background color */
     .reportview-container {
-        background-color: #002b36;
+        background-color: #002b36 !important;
     }
+    /* Set sidebar background color */
     .sidebar .sidebar-content {
-        background-color: #586e75;
+        background-color: #586e75 !important;
     }
-    .stButton>button {
-        background-color: #08c2af;
-        color: #ffffff;
+    /* Set primary button colors */
+    div.stButton > button {
+        background-color: #08c2af !important;
+        color: #ffffff !important;
     }
-    .stTextInput>div>input {
-        background-color: #586e75;
-        color: #ffffff;
+    /* Set text input background and text color */
+    .stTextInput > div > input {
+        background-color: #586e75 !important;
+        color: #ffffff !important;
     }
-    .stTextArea>div>textarea {
-        background-color: #586e75;
-        color: #ffffff;
+    /* Set text area background and text color */
+    .stTextArea > div > textarea {
+        background-color: #586e75 !important;
+        color: #ffffff !important;
     }
-    .stMarkdown {
-        color: #ffffff;
+    /* Set markdown text color */
+    .stMarkdown, .stText {
+        color: #ffffff !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+
 
 
 
