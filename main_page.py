@@ -9,21 +9,7 @@ from firebase_admin import credentials
 from firebase_admin import auth
 import time
 
-st.markdown("""
-    <style>
-        body, .stApp {
-            background-color: #002b36;
-            color: #ffffff;
-        }
-        .stButton>button {
-            background-color: #08c2af;
-            color: white;
-        }
-        .css-1d391kg, .css-18ni7ap {
-            background-color: #586e75 !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
+
 
 
 
@@ -46,7 +32,21 @@ c.execute('''
 conn.commit()
 
 
-
+st.markdown("""
+    <style>
+        body, .stApp {
+            background-color: #002b36;
+            color: #ffffff;
+        }
+        .stButton>button {
+            background-color: #08c2af;
+            color: white;
+        }
+        .css-1d391kg, .css-18ni7ap {
+            background-color: #586e75 !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 
 
