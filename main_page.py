@@ -35,13 +35,19 @@ conn.commit()
 
 st.markdown("""
     <style>
-        html, body, [data-testid="stAppViewContainer"], .stApp, 
-        [data-testid="stSidebar"], [data-testid="stHeader"] {
+        [data-testid="stAppViewContainer"] {
+            background-color: #002b36 !important;
+        }
+
+        [data-testid="stSidebar"] {
+            background-color: #002b36 !important;
+        }
+
+        header {
             background-color: #002b36 !important;
         }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
