@@ -33,16 +33,18 @@ c.execute('''
 conn.commit()
 
 
+
 def local_css():
     st.markdown(
         """
         <style>
-        /* Background gradient */
-        .main {
+        /* Background gradient and main area */
+        .css-18e3th9 {
             background: linear-gradient(135deg, #0a9396, #94d2bd);
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
         /* Header styling */
         .title {
             font-weight: 900;
@@ -52,14 +54,21 @@ def local_css():
             text-shadow: 2px 2px 4px #00000055;
         }
 
-        /* Sidebar styling */
-        .css-1d391kg {
+        /* Sidebar background and text color */
+        [data-testid="stSidebar"] {
             background-color: #005f73;
             color: white;
             font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        /* Sidebar links color */
+        [data-testid="stSidebar"] div[role="listitem"] > div {
+            color: white !important;
+            font-weight: 600;
         }
 
-        /* Button styling */
+        /* Buttons styling */
         div.stButton > button:first-child {
             background-color: #0a9396;
             color: white;
@@ -76,7 +85,7 @@ def local_css():
         }
 
         /* Checkbox label color */
-        .stCheckbox > label {
+        label[data-baseweb="checkbox"] {
             color: white !important;
             font-size: 1rem;
             font-weight: 600;
@@ -91,21 +100,24 @@ def local_css():
             font-weight: 700;
         }
 
-        /* Markdown text color */
-        .css-1kyxreq p, .css-1kyxreq span {
-            color: white;
-        }
-        /* Progress bar color */
-        .stProgress > div > div > div > div {
-            background-color: #94d2bd !important;
+        /* Markdown text color for main content */
+        .streamlit-expanderHeader, .markdown-text-container p, .markdown-text-container span {
+            color: white !important;
         }
 
+        /* Progress bar color */
+        div.stProgress > div > div > div > div {
+            background-color: #94d2bd !important;
+        }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
+# Call local_css to apply styles
 local_css()
+
+
 
 
 
