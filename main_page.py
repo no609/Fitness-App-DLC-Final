@@ -33,19 +33,15 @@ c.execute('''
 conn.commit()
 
 
-def set_background_color(color):
-    st.markdown(
-        f"""
-        <style>
-        /* Main app background */
-        .css-18e3th9 {{
-            background-color: {color};
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-set_background_color('#f0f0f0')
+config_toml = '''[theme]
+primaryColor = "#08c2af"
+backgroundColor = "#002b36"
+secondaryBackgroundColor = "#586e75"
+textColor = "#ffffff"
+
+[client]
+toolbarMode = "minimal"
+'''
 
 
 
