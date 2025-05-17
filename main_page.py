@@ -34,7 +34,7 @@ conn.commit()
 
 
 
-st.markdown("""
+st.markdown("
     <style>
     /* Backgrounds */
     body, .stApp {
