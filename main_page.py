@@ -29,7 +29,7 @@ st.markdown("""
     }
 
     .block-container {
-        padding-top: ;
+        padding-top:1rem ;
     }
 
     .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
