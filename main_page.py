@@ -34,18 +34,99 @@ conn.commit()
 
 
 def local_css():
-     st.markdown(
+    st.markdown(
         """
         <style>
-        /* Full page background */
-        .css-18e3th9, .css-1d391kg, .css-1outpf7 {
-            background-color: #002b36 !important;
-            color: #ffffff !important;
+        /* Background gradient */
+        .main {
+            background: linear-gradient(135deg, #0a9396, #94d2bd);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        /* Header styling */
+        .title {
+            font-weight: 900;
+            font-size: 3rem !important;
+            color: #e9d8a6;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px #00000055;
+        }
+
+        /* Sidebar styling */
+        .css-1d391kg {
+            background-color: #005f73;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Button styling */
+        div.stButton > button:first-child {
+            background-color: #0a9396;
+            color: white;
+            font-weight: 700;
+            border-radius: 10px;
+            padding: 10px 24px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        div.stButton > button:first-child:hover {
+            background-color: #94d2bd;
+            color: #005f73;
+            cursor: pointer;
+        }
+
+        /* Checkbox label color */
+        .stCheckbox > label {
+            color: white !important;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Text input style */
+        div.stTextInput > div > input {
+            border-radius: 8px;
+            padding: 8px;
+            border: 2px solid #0a9396;
+            color: #001219;
+            font-weight: 700;
+        }
+
+        /* Markdown text color */
+        .css-1kyxreq p, .css-1kyxreq span {
+            color: white;
+        }
+        /* Progress bar color */
+        .stProgress > div > div > div > div {
+            background-color: #94d2bd !important;
+        }
+
         </style>
         """,
         unsafe_allow_html=True,
     )
+
+local_css()
+
+
+
+
+def count_down(seconds, calories_to_add):
+    countdown_placeholder = st.empty()
+    for remaining in range(seconds, 0, -1):
+        mins, secs = divmod(remaining, 60)
+        countdown_placeholder.markdown(f"<h1 style='color:#08c2af; font-weight:bold;'>{mins:02d}:{secs:02d}</h1>", unsafe_allow_html=True)
+        time.sleep(1)
+    countdown_placeholder.markdown("<h2 style='color:#94d2bd; font-weight:bold;'>Time&#39;s Up! You Did It! 🎉</h2>", unsafe_allow_html=True)
+    if 'calories_burned' not in st.session_state:
+        st.session_state.calories_burned = 0
+    st.session_state.calories_burned += calories_to_add
+
+def only_cal(calories_to_add):
+    if 'calories_burned' not in st.session_state:
+        st.session_state.calories_burned = 0
+    st.session_state.calories_burned += calories_to_add
+
+
 
 
 def login():
