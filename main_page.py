@@ -35,41 +35,9 @@ conn.commit()
 
 st.markdown("""
     <style>
-        html, body, [data-testid="stAppViewContainer"], .stApp {
-            background-color: #002b36 !important;
-            color: #ffffff !important;
-        }
-
+        html, body, [data-testid="stAppViewContainer"], .stApp, 
         [data-testid="stSidebar"], [data-testid="stHeader"] {
             background-color: #002b36 !important;
-            color: #ffffff !important;
-        }
-
-        [data-testid="stToolbar"] {
-            visibility: hidden;
-        }
-
-        .stButton>button {
-            background-color: #08c2af !important;
-            color: #ffffff !important;
-        }
-
-        .block-container, .stTextInput, .stSelectbox, .stSlider {
-            background-color: #586e75 !important;
-            color: #ffffff !important;
-        }
-
-        input, textarea, select, div[role="combobox"] * {
-            background-color: #586e75 !important;
-            color: #ffffff !important;
-        }
-
-        label, span, p, h1, h2, h3, h4, h5, h6, div {
-            color: #ffffff !important;
-        }
-
-        a {
-            color: #08c2af !important;
         }
     </style>
 """, unsafe_allow_html=True)
