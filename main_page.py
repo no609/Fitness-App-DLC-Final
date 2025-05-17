@@ -15,7 +15,7 @@ st.markdown("""
     <style>
     .stApp {
         background-color: #002b36;
-        padding-top: 3rem;  /* Add top padding */
+        padding-top: 6rem;  /* Add top padding */
     }
 
     section[data-testid="stSidebar"] {
