@@ -16,59 +16,6 @@ import time
 
 
 
-# Full theme CSS applying all requested colors with updated selectors and efficient targeting
-css = """
-<style>
-/* Main app background */
-[data-testid="stAppViewContainer"] {
-    background-color: #002b36;
-}
-
-/* Sidebar background */
-[data-testid="stSidebar"] > div:first-child {
-    background-color: #586e75;
-}
-
-/* Primary buttons styling */
-div.stButton > button {
-    background-color: #08c2af;
-    color: #ffffff;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-div.stButton > button:hover {
-    background-color: #06a799;
-}
-
-/* Text inputs and textareas */
-input[type="text"], textarea {
-    background-color: #586e75;
-    color: #ffffff;
-    border: 1px solid #08c2af;
-    border-radius: 4px;
-    padding: 6px 10px;
-}
-
-/* Markdown and text colors */
-[data-testid="stMarkdownContainer"], .streamlit-expanderHeader, .css-ffhzg2 p, .css-0 span, .css-178ag6o {
-    color: #ffffff;
-}
-
-/* File uploader background */
-.stFileUploader > div {
-    background-color: #586e75;
-    color: #ffffff;
-    border-radius: 4px;
-}
-
-/* Ensure any labels and text inputs inside forms also get text color */
-label, span, .css-1v0mbdj {
-    color: #ffffff;
-}
-</style>
-"""
-
-st.markdown(css, unsafe_allow_html=True)
 
 
 
