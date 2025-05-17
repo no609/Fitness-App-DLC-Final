@@ -29,7 +29,7 @@ c.execute('''
         password TEXT NOT NULL
     )
 ''')
-conn.commit()
+
 
 
 
