@@ -35,13 +35,17 @@ conn.commit()
 
 def local_css():
     st.markdown(
-        """
-        <style>
-        /* Background gradient */
-        .main {
-            background: linear-gradient(135deg, #0a9396, #94d2bd);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    """
+    <style>
+    /* Background gradient */
+    .main {
+        background: linear-gradient(135deg, #08c2af, #586e75);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
         }
         /* Header styling */
         .title {
