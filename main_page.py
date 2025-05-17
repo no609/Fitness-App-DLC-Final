@@ -13,51 +13,56 @@ import time
 
 st.markdown("""
     <style>
-    /* Backgrounds */
-    body, .stApp {
+    /* App background */
+    .stApp {
         background-color: #002b36;
-        color: #ffffff;
     }
 
-    /* Sidebar */
+    /* Sidebar background */
     section[data-testid="stSidebar"] {
         background-color: #586e75;
     }
 
-    /* Widgets (input boxes, dropdowns, etc.) */
-    .stTextInput>div>div>input,
-    .stSelectbox>div>div>div>div,
-    .stPasswordInput>div>div>input,
-    .stTextArea>div>textarea {
-        background-color: #586e75;
+    /* Text color */
+    .stApp, .stMarkdown, .css-10trblm, .css-1v3fvcr, .css-16idsys {
         color: #ffffff;
-        border: none;
+    }
+
+    /* Input fields */
+    input, textarea, select {
+        background-color: #586e75 !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+
+    /* Dropdown caret color */
+    .css-1wa3eu0 {
+        color: #ffffff !important;
     }
 
     /* Button styling */
-    .stButton>button {
+    .stButton > button {
         background-color: transparent;
-        color: #08c2af;
         border: 1px solid #08c2af;
+        color: #08c2af;
     }
 
-    .stButton>button:hover {
+    .stButton > button:hover {
         background-color: #08c2af;
         color: #002b36;
     }
 
-    /* Radio buttons */
-    .stRadio > div {
+    /* Radio and labels */
+    label, .stRadio {
         color: #ffffff;
     }
 
-    /* Headings */
-    h1, h2, h3, h4, h5, h6 {
-        color: #ffffff;
+    /* Remove extra padding (optional) */
+    .block-container {
+        padding-top: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 if not firebase_admin._apps:
     cred = credentials.Certificate(dict(st.secrets["firebase"]))
