@@ -35,19 +35,16 @@ conn.commit()
 
 def local_css():
     st.markdown(
-    """
-    <style>
-    /* Background gradient */
-    .main {
-        background: linear-gradient(135deg, #08c2af, #586e75);
-        color: #ffffff;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
-     /* Header styling */
+        """
+        <style>
+        /* Background gradient */
+        .main {
+            background: linear-gradient(135deg, #08c2af, #586e75);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header styling */
         .title {
             font-weight: 900;
             font-size: 3rem !important;
@@ -99,20 +96,15 @@ def local_css():
         .css-1kyxreq p, .css-1kyxreq span {
             color: white;
         }
+
         /* Progress bar color */
         .stProgress > div > div > div > div {
             background-color: #94d2bd !important;
         }
-
         </style>
         """,
         unsafe_allow_html=True,
     )
-
-local_css()
-
-
-
 
 def count_down(seconds, calories_to_add):
     countdown_placeholder = st.empty()
