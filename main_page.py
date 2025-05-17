@@ -32,6 +32,7 @@ c.execute('''
 conn.commit()
 
 
+
 st.markdown("""
     <style>
         html, body, [data-testid="stAppViewContainer"], .stApp {
@@ -39,12 +40,9 @@ st.markdown("""
             color: #ffffff !important;
         }
 
-        [data-testid="stSidebar"] {
+        [data-testid="stSidebar"], [data-testid="stHeader"] {
             background-color: #002b36 !important;
-        }
-
-        [data-testid="stHeader"] {
-            background-color: #002b36 !important;
+            color: #ffffff !important;
         }
 
         [data-testid="stToolbar"] {
@@ -56,16 +54,17 @@ st.markdown("""
             color: #ffffff !important;
         }
 
-        .css-1v0mbdj, .css-1dp5vir, .block-container {
-            background-color: #586e75 !important;
-        }
-
-        .stSelectbox div, .stTextInput input, .stSlider, .stSlider>div {
+        .block-container, .stTextInput, .stSelectbox, .stSlider {
             background-color: #586e75 !important;
             color: #ffffff !important;
         }
 
-        .css-1y4p8pa {
+        input, textarea, select, div[role="combobox"] * {
+            background-color: #586e75 !important;
+            color: #ffffff !important;
+        }
+
+        label, span, p, h1, h2, h3, h4, h5, h6, div {
             color: #ffffff !important;
         }
 
@@ -74,7 +73,6 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
