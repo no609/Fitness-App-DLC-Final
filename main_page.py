@@ -34,19 +34,14 @@ conn.commit()
 
 
 def local_css():
-    st.markdown(
+     st.markdown(
         """
         <style>
-        /* Background color for main app container */
-        .css-18e3th9 {
+        /* Full page background */
+        .css-18e3th9, .css-1d391kg, .css-1outpf7 {
             background-color: #002b36 !important;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
+            color: #ffffff !important;
         }
-
-        /* Other styles unchanged */
-        /* ... */
         </style>
         """,
         unsafe_allow_html=True,
