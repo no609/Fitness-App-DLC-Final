@@ -16,6 +16,47 @@ import time
 
 
 
+# Minimal CSS targeting only necessary elements with specific selectors and minimal !important usage
+custom_css = """
+<style>
+/* Main app background */
+[data-testid="stAppViewContainer"] {
+    background-color: #002b36;
+}
+
+/* Sidebar background */
+[data-testid="stSidebar"] > div:first-child {
+    background-color: #586e75;
+}
+
+/* Primary buttons */
+div.stButton > button {
+    background-color: #08c2af;
+    color: #ffffff;
+}
+
+/* Text inputs and textareas */
+input[type="text"], textarea {
+    background-color: #586e75;
+    color: #ffffff;
+}
+
+/* Markdown text color */
+[data-testid="stMarkdownContainer"] {
+    color: #ffffff;
+}
+
+/* Avoid interfering with other controls and layouts */
+</style>
+"""
+
+st.markdown(custom_css, unsafe_allow_html=True)
+
+
+
+
+
+
 
 
 
