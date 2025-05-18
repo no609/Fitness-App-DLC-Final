@@ -26,7 +26,7 @@ custom_css = """
 
 /* Sidebar background */
 [data-testid="stSidebar"] > div:first-child {
-    background-color: ##41899c;
+    background-color: #586e75;
 }
 
 /* Primary buttons */
