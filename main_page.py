@@ -21,7 +21,7 @@ custom_css = """
 <style>
 /* Main app background */
 [data-testid="stAppViewContainer"] {
-    background-color: #002b36;
+    background-color: #ffffff;
 }
 
 /* Sidebar background */
