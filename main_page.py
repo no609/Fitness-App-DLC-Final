@@ -37,7 +37,7 @@ div.stButton > button {
 
 /* Text inputs and textareas */
 input[type="text"], textarea {
-    background-color: #586e75;
+    background-color: #38c9b4;
     color: #ffffff;
 }
 
