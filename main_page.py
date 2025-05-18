@@ -31,7 +31,7 @@ custom_css = """
 
 /* Primary buttons */
 div.stButton > button {
-    background-color: #d33682;
+    background-color: #38c9b4;
     color: #ffffff;
 }
 
