@@ -166,16 +166,6 @@ def main():
             st.warning("Please select a goal on the 'Goal' page first.")
             return
         st.markdown("<h2 style='color:#08c2af; font-weight:bold;'>💪 Your Customized Personalized Plan</h2>", unsafe_allow_html=True)
-     for exercise, reps in exercises.items():
-           st.markdown(f"<h4 style='color:{exercises_text_color};'>{exercise}</h4>", unsafe_allow_html=True)
-           for rep in reps:
-                key = f"{exercise}_{rep}"
-                if key not in st.session_state:
-                     st.session_state[key] = False  # Track checkbox state
-
-                st.session_state[key] = st.checkbox(rep, key=key, value=st.session_state[key])
-
-                if st.session_state[key] and not st.session_state.get(f"{key}_logged", False):
                     only_cal(rep_calorie_value)
                     st.session_state[f"{key}_logged"] = True
         if "timer_started" not in st.session_state:
