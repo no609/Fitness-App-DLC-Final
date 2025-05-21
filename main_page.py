@@ -64,7 +64,6 @@ def count_down(seconds, calories_to_add):
     if 'calories_burned' not in st.session_state:
         st.session_state.calories_burned = 0
     st.session_state.calories_burned += calories_to_add
-
 def only_cal(calories_to_add):
     if 'calories_burned' not in st.session_state:
         st.session_state.calories_burned = 0
