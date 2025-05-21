@@ -165,7 +165,7 @@ def main():
             st.warning("Please select a goal on the 'Goal' page first.")
             return
         st.markdown("<h2 style='color:#08c2af; font-weight:bold;'>💪 Your Customized Personalized Plan</h2>", unsafe_allow_html=True)
-         only_cal(rep_calorie_value)
+        only_cal(rep_calorie_value)
               st.session_state[f"{key}_logged"] = True
         if "timer_started" not in st.session_state:
             st.session_state.timer_started = False
